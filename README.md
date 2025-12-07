@@ -29,7 +29,6 @@ streamlit run app.py
 emlyon_ml_project/
 ├── app.py                  # Streamlit
 ├── environment.yml         # Conda environment
-├── requirements.txt        # Pip dependencies
 ├── notebooks/              # jupyter notebooks
 │    ├── 00_Draft.ipynb
 │    ├── 01_EDA.ipynb
@@ -37,5 +36,5 @@ emlyon_ml_project/
 │    └── 03_Modeling.ipynb
 ├── models/
 │    └── best_lgbm.pkl       # best model
-└── data/                       # data
+└── data/                    # data
 ```
