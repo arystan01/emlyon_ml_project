@@ -1,0 +1,22 @@
+name: arystan_conda
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.13.3
+  - pip
+  - pip:
+    - ipykernel
+    - imbalanced-learn
+    - streamlit
+    - pandas
+    - numpy
+    - scikit-learn
+    - lightgbm
+    - joblib
+    - optuna
+    - matplotlib
+    - seaborn
+    - xgboost
+    - joblib
+    - catboost
