@@ -128,7 +128,7 @@ elif st.session_state.login_step == "logged":
                 return joblib.load(Path("models/best_lgbm.pkl"))
 
             model = load_model()
-            OPTIMAL_THRESHOLD = 0.18944723618090453
+            OPTIMAL_THRESHOLD = 0.2788944723618091
             
             col1, col2 = st.columns(2)
 
