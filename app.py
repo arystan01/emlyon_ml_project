@@ -128,7 +128,7 @@ elif st.session_state.login_step == "logged":
                 return joblib.load(Path("models/best_lgbm.pkl"))
 
             model = load_model()
-            OPTIMAL_THRESHOLD = 0.2788944723618091
+            OPTIMAL_THRESHOLD = 0.18944723618090453
             
             col1, col2 = st.columns(2)
 
@@ -198,11 +198,7 @@ elif st.session_state.login_step == "logged":
             st.markdown("---")
             if st.button("Assess Credit Risk"):
 
-                INCOME_PER_PERSON = LOG_INCOME / CNT_FAM_MEMBERS
-                AGE_YEARS = AGE / 365
-                EXPERIENCE_YEARS = EXPERIENCE / 365
-                EMPLOYMENT_RATIO = EXPERIENCE_YEARS / (AGE_YEARS + 0.001)
-                IS_UNEMPLOYED = 1 if EXPERIENCE == 0 else 0
+
 
 ##### Input DataFrame #####
 
@@ -223,7 +219,25 @@ elif st.session_state.login_step == "logged":
                     'AGE': [AGE],
                     'EXPERIENCE': [EXPERIENCE],
                     'LOG_INCOME': [LOG_INCOME]
-                })
+                })[[
+                    'CODE_GENDER',
+                    'FLAG_OWN_CAR',
+                    'FLAG_OWN_REALTY',
+                    'CNT_CHILDREN',
+                    'NAME_INCOME_TYPE',
+                    'NAME_EDUCATION_TYPE',
+                    'NAME_FAMILY_STATUS',
+                    'NAME_HOUSING_TYPE',
+                    'FLAG_MOBIL',
+                    'FLAG_WORK_PHONE',
+                    'FLAG_PHONE',
+                    'FLAG_EMAIL',
+                    'CNT_FAM_MEMBERS',
+                    'AGE',
+                    'EXPERIENCE',
+                    'LOG_INCOME'
+                ]]
+
 
                 probability = model.predict_proba(input_data)[0]
                

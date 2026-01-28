@@ -15,7 +15,7 @@ conda env create -f environment.yml
 
 ### 3. Activate environment
 ```bash
-conda activate credit_risk
+conda activate arystan_conda
 ```
 
 ### 4. Demo 
